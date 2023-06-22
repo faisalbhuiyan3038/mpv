@@ -1,0 +1,1 @@
+Use mpv from svp's folder for svp support, just place these in %appdata%\mpv
