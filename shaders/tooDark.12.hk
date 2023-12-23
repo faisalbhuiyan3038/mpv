@@ -1,0 +1,40 @@
+//!HOOK MAIN
+//!BIND HOOKED
+//!DESC tooDark-12
+#define Screen 0.12
+
+/* --- tooDark (mpv glsl.hook) small adjustment, ex: 0.12 --- */
+/* These parameters provides a small brightness increase to boost a clip that could maybe be brighter.
+If clipping highlights isn't an issue, alternatives would be: brightenD.03
+or for a brightness+contrast increase: exposure.04.
+---
+v1.40 (2023-07) released by butterw under GPLv3
+ (1 texture, 3 arithmetic)
+
+Apply when the picture is too dark.
+Increases brightness without clipping (Black point and White point aren't changed).
+
+Photoshop Screen Blend, brightness/contrast curve:
+out = f(x, S: Screen) = -S*x*x + (1+S)*x = -S*x^2 +S*x +x
+    with x, out: pixel.rgb in [0, 1.0]
+    and Screen >=0
+f(x:0)=0; f(0.5)=0.5; f(1)=1.
+
+parameter Screen [-1, 1.0], 0: no effect.
+>> Positive: (Screen Blend) increases brightness, increases constrast in shadows, ex: 0.24
+    - Brightness increase is maximum at the mid-point (S/4).
+    - Contrast = 1+S -2*S*x
+    Contrast is maximum at the Black point (1+S) and decreases linearly with input level.
+    Contrast:1 at the midpoint.
+
+negative: (Multiply Blend) decreases brightness, increases contrast in highlights.
+
+*/
+#define Multiply -Screen //to ensure a positive user parameter.
+
+vec4 hook() {
+    vec4 c0 = HOOKED_texOff(0);
+
+    c0.rgb = mix(c0, c0*c0, Multiply).rgb;
+    return c0;
+}
