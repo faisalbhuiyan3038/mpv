@@ -2,6 +2,7 @@
 
 import vapoursynth as vs
 core = vs.core
+core.std.LoadPlugin(path=r'D:\Program Files (x86)\SVP 4\mpv64\vapoursynth64\plugins\libmvtools.dll')
 clip = video_in
 
 dst_fps = display_fps
