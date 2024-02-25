@@ -6,22 +6,22 @@
 #define n 4 
 
 /* --- deContrast (mpv glsl.hook) --- */
+
 /* v1.50 (2023-11) released by butterw under GPLv3
 n:4 (1 texture, 6 arithmetic).
-
 (with S<0, ex: -0.07) Reduces midtone contrast. Also boosts contrast in shadows/highlights.
 
-Sn brightness/contrast curve
+# Sn brightness/contrast curve
 out = f(x, S) = x + S/2*(2*x-1) *(1-(2*x-1)^n) = x + S/2*x1 *(1-x1^n)
     with n even >0 (ex: 4, 6, 8, 16, etc.)
     and x1 = 2*x -1
     and x, out pixel.rgb in [0, 1.0].
 
-Brightness
+# Brightness
 f(x:0)=0; f(0.5)=0.5; f(1)=1.
 S<0: brightness is increased below the midpoint (x: 0.5) and decreased above the midpoint.
 
-Contrast
+# Contrast
 - contrast(x:0.5): 1+S
 - contrast(x:0)=contrast(x:1): 1-S*n
 
