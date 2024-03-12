@@ -14,3 +14,6 @@ config file located in:
 
 if not there run:
 `nano ~/.config/mpv/mpv.conf`
+
+cloning command:
+`gh repo clone faisalbhuiyan3038/mpv -- --branch ubuntu --depth 1`
