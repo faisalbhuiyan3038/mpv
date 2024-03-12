@@ -1,3 +1,9 @@
+cloning command:
+`gh repo clone faisalbhuiyan3038/mpv -- --branch ubuntu --depth 1`
+
+install mpv from https://snapcraft.io/mpv
+sudo snap install mpv
+
 install mpv via flatpak
 
 `sudo apt install flatpak`
@@ -14,6 +20,3 @@ config file located in:
 
 if not there run:
 `nano ~/.config/mpv/mpv.conf`
-
-cloning command:
-`gh repo clone faisalbhuiyan3038/mpv -- --branch ubuntu --depth 1`
