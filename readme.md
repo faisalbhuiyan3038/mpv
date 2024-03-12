@@ -4,6 +4,9 @@ cloning command:
 install mpv from https://snapcraft.io/mpv
 sudo snap install mpv
 
+snap run mpv
+snap info mpv
+
 install mpv via flatpak
 
 `sudo apt install flatpak`
