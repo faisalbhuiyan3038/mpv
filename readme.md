@@ -1,5 +1,16 @@
-Use mpv from svp's folder for svp support, just place these in %appdata%\mpv
-for mvtools, install svp, use mpv from there, place mvtools dl file from https://github.com/dubhater/vapoursynth-mvtools/releases in vapoursynth64/plugins. 
-Follow this thread if any problems occur: https://www.reddit.com/r/mpv/comments/oke3aa/guide_how_to_get_motion_interpolation_soap_opera/
+install mpv via flatpak
 
-for autosubsync: https://github.com/joaquintorres/autosubsync-mpv
+`sudo apt install flatpak`
+`sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
+`flatpak install flathub io.mpv.Mpv -y`
+
+list mpv options:
+`mpv --list-options`
+
+`flatpak run io.mpv.Mpv`
+
+config file located in:
+`/home/faisal/.var/app/io.mpv.Mpv/config`
+
+if not there run:
+`nano ~/.config/mpv/mpv.conf`
