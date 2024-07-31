@@ -1,5 +1,7 @@
 # Custom MPV configuration
 
+open mpv-file-browser with fn+rightCTRL on laptop.
+
 Use mpv from svp's folder for svp support, just place these in %appdata%\mpv
 
 for mvtools, install svp, use mpv from there, place mvtools dl file from https://github.com/dubhater/vapoursynth-mvtools/releases in vapoursynth64/plugins.
