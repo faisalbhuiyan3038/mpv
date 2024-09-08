@@ -1,6 +1,7 @@
 # Custom MPV configuration
 
-open mpv-file-browser with fn+rightCTRL on laptop.
+- open mpv-file-browser with fn+rightCTRL on laptop.
+- adjust sharpness, gamma, contrast and brightness to improve visuals.
 
 Use mpv from svp's folder for svp support, just place these in %appdata%\mpv
 
